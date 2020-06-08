@@ -6,6 +6,7 @@ import router from './router'
 import fasClick from 'fastclick'
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
+import './assets/styles/iconfont.css'
 
 Vue.config.productionTip = false
 fasClick.attach(document.body)

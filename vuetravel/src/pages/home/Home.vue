@@ -1,11 +1,15 @@
 <template>
 <div>
-hello word
+<homeheader></homeheader>
 </div>
 </template>
 <script>
+import homeheader from './components/header'
 export default {
-  name: 'Home'
+  name: 'home',
+  components: {
+    homeheader
+  }
 }
 </script>
 <style lang="">
