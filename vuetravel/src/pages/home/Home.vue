@@ -1,13 +1,13 @@
 <template>
-<router-view/>
+<div>
+hello word
+</div>
 </template>
-
 <script>
 export default {
-  name: 'App'
+  name: 'Home'
 }
 </script>
-
-<style>
+<style lang="">
 
 </style>
