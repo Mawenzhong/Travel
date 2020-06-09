@@ -1,6 +1,6 @@
 <template>
 <div class="icons">
-  <swiper ref="mySwiper">
+  <swiper ref="mySwiper" :options="swiperOptions">
      <swiper-slide v-for="(off,index) of get" :key="index">
     <div class="icon" v-for="item of off" :key="item.id">
         <div class="icon-img">
@@ -19,6 +19,9 @@ export default{
   name: 'homeicons',
   data () {
     return {
+      swiperOptions: {
+        autoplay: false
+      },
       iconslist: [{
         id: '001',
         imgurl: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
@@ -27,37 +30,37 @@ export default{
       {
         id: '002',
         imgurl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        desc: '酒店'
+        desc: '机票'
       },
       {
         id: '003',
         imgurl: '//s.qunarzz.com/homenode/images/touchheader/train.png',
-        desc: '酒店'
+        desc: '火车票'
       },
       {
         id: '004',
         imgurl: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-        desc: '酒店'
+        desc: '景点门票'
       },
       {
         id: '005',
         imgurl: 'https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png',
-        desc: '酒店'
+        desc: '海外酒店'
       },
       {
         id: '006',
         imgurl: 'https://picbed.qunarzz.com/a36d2288f19e54562338f4d8ef986288.png',
-        desc: '酒店'
+        desc: '低价机票'
       },
       {
         id: '007',
         imgurl: 'https://picbed.qunarzz.com/377db8cb2143aebf01869c9baad3d325.png',
-        desc: '酒店'
+        desc: '汽车票船票'
       },
       {
         id: '008',
         imgurl: '//s.qunarzz.com/homenode/images/touchheader/package.png',
-        desc: '酒店'
+        desc: '度假'
       },
       {
         id: '009',
