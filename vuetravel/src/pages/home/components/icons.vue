@@ -128,6 +128,7 @@ export default{
   height:0
   padding-bottom:50%
 .icons
+  margin-top:.2rem
   width:100%
   height:0
   padding-bottom:50%
