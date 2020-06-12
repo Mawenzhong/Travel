@@ -2,8 +2,8 @@
 <div class="Special">
 <div class="home-holiday"><span class="home-span">更多优惠特价></span></div>
 <div class="home-dujia">
-<div class="dujia-body" v-for="item of recomm" :key="item.id">
-<img class="dujia-img" :src="item.imgurl" alt="">
+<div class="dujia-body" v-for="item of list" :key="item.id">
+<img class="dujia-img" :src="item.imgUrl" alt="">
 <span class="dujia-span">{{item.title}}</span>
 <p class="dujia-p">{{item.desc}}</p>
 </div>
@@ -15,28 +15,8 @@
 export default {
 
   name: 'homeweekend',
-  data () {
-    return {
-      recomm: [{
-        id: '001',
-        imgurl: '//img1.qunarzz.com/sight/p0/2006/c0/c08a1c90286ac75a3.water.jpg_256x160_caa36125.jpg',
-        title: '长隆水上乐园',
-        desc: '¥59'}, {
-        id: '002',
-        imgurl: '//img1.qunarzz.com/sight/p0/2006/70/705f77e802bf6a92a3.water.jpg_256x160_07152ad2.jpg',
-        title: '长隆野生动物世界',
-        desc: '¥174'}, {
-        id: '003',
-        imgurl: '//img1.qunarzz.com/sight/p0/2005/6c/6cb1267f47db2083a3.img.jpg_256x160_f75c36a8.jpg',
-        title: '珠海长隆海洋王国',
-        desc: '¥225'}, {
-        id: '004',
-        imgurl: '//img1.qunarzz.com/sight/p0/1509/80/9535a0d28468b3c6c910d87f1a4fdbe8.water.jpg_256x160_600b2e6f.jpg',
-        title: '岭南印象园',
-        desc: '¥53'}
-
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
