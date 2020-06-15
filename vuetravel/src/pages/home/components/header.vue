@@ -7,10 +7,12 @@
 <span class="iconfont">&#xe632;</span>
 输入城市/景点/游玩主题
 </div>
+<router-link to="/city" >
 <div class="btn-right">
 {{this.city}}
 <span class="iconfont back-right">&#xe6aa;</span>
 </div>
+</router-link>
 </div>
 </template>
 <script>
@@ -49,6 +51,7 @@ export default {
   width:1.24rem
   float:right
   text-align:center
+  color:#fff
 .back-right
   font-size:.1rem
 </style>
