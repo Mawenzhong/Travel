@@ -7,77 +7,20 @@
             <div class="button-list">
                 <div class="button-add">北京</div>
             </div>
-            <div class="button-list">
-                <div class="button-add">北京</div>
-            </div>
-            <div class="button-list">
-                <div class="button-add">北京</div>
-            </div>
-            <div class="button-list">
-                <div class="button-add">北京</div>
-            </div>
-            <div class="button-list">
-                <div class="button-add">北京</div>
-            </div>
         </div>
     </div>
     <div class="list-add">
         <div class="title border-title">热门城市</div>
         <div class="title-list">
-            <div class="button-list">
-                <div class="button-add">北京</div>
-            </div>
-            <div class="button-list">
-                <div class="button-add">北京</div>
-            </div>
-            <div class="button-list">
-                <div class="button-add">北京</div>
-            </div>
-            <div class="button-list">
-                <div class="button-add">北京</div>
-            </div>
-            <div class="button-list">
-                <div class="button-add">北京</div>
+            <div class="button-list" v-for="item of hot" :key="item.id">
+                <div class="button-add">{{item.name}}</div>
             </div>
         </div>
     </div>
-    <div class="list-add">
-        <div class="title border-title">A</div>
+    <div class="list-add" v-for="(item,key) of cities" :key="key">
+        <div class="title border-title">{{key}}</div>
         <div class="item-list">
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-        </div>
-    </div>
-     <div class="list-add">
-        <div class="title border-title">A</div>
-        <div class="item-list">
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-        </div>
-    </div>
-    <div class="list-add">
-        <div class="title border-title">A</div>
-        <div class="item-list">
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
-            <div class="item button-item">阿拉尔</div>
+            <div class="item button-item" v-for="itemadd of item" :key="itemadd.id">{{itemadd.name}}</div>
         </div>
     </div>
     </div>
@@ -88,6 +31,11 @@ import BScroll from 'better-scroll'
 export default {
 
   name: 'citylist',
+  props: {
+    hot: Array,
+    cities: Object
+
+  },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)
   }
@@ -126,6 +74,7 @@ export default {
   margin:.1rem
   text-align:center
   border:.02rem solid #ccc
+  border-radius:.2rem
 .item-list
 .item
   line-height:.76rem
