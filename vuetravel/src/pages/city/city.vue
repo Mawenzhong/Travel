@@ -2,8 +2,8 @@
 <div>
 <cityheader></cityheader>
 <citysearch></citysearch>
-<citylist :cities="cities" :hot="hotCities"></citylist>
-<cityalphabet :cities="cities"></cityalphabet>
+<citylist :cities="cities" :hot="hotCities" :list="letter"></citylist>
+<cityalphabet :cities="cities" @change="hadnadd"></cityalphabet>
 </div>
 </template>
 <script>
@@ -17,7 +17,8 @@ export default {
   data () {
     return {
       cities: {},
-      hotCities: []
+      hotCities: [],
+      letter: ''
     }
   },
   components: {
@@ -38,6 +39,9 @@ export default {
         this.hotCities = res.data.hotCities
       }
       console.log(res)
+    },
+    hadnadd (e) {
+      this.letter = e
     }
   },
   mounted () {
