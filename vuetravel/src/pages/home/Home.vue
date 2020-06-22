@@ -1,6 +1,6 @@
 <template>
 <div>
-<homeheader :city="city"></homeheader>
+<homeheader></homeheader>
 <homeswiper :list="swiperimg"></homeswiper>
 <homeicons :list="icons"></homeicons>
 <homerecom :list="recom"></homerecom>
@@ -25,7 +25,6 @@ export default {
   },
   data () {
     return {
-      city: '',
       swiperimg: [],
       icons: [],
       recom: [],
@@ -43,7 +42,6 @@ export default {
     gethomekk (res) {
       res = res.data
       if (res.ret && res.data) {
-        this.city = res.data.city
         this.swiperimg = res.data.swiperList
         this.icons = res.data.iconList
         this.recom = res.data.recommendList
