@@ -2,11 +2,11 @@
 <div class="Special">
 <div class="home-holiday"><span class="home-span">特惠度假</span></div>
 <div class="home-dujia">
-<div class="dujia-body" v-for="item of list" :key="item.id">
+<router-link :to="'/detail/'+item.id" tag="div" class="dujia-body" v-for="item of list" :key="item.id">
 <img class="dujia-img" :src="item.imgUrl" alt="">
 <span class="dujia-span">{{item.title}}</span>
 <p class="dujia-p">{{item.desc}}</p>
-</div>
+</router-link>
 </div>
 </div>
 </template>
