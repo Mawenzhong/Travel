@@ -37,7 +37,7 @@ export default {
 .banner
   position:relative
   height:0
-  padding-bottom:50%
+  padding-bottom:66.5%
 .banner-img
   width:100%
 .banner-inf

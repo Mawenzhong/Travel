@@ -39,6 +39,9 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.haederbtn)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.haederbtn)
   }
 }
 </script>
@@ -58,6 +61,7 @@ export default {
   font-size:.4rem
   line-height:.8rem
 .header-akk
+  z-index:99
   position:fixed
   top:0
   left:0
