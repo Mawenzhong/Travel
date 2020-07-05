@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    <div class="list-add">4
+    <div class="list-add">
         <div class="title border-title">热门城市</div>
         <div class="title-list">
             <div class="button-list" v-for="item of hot" :key="item.id" @click="listadd(item.name)">

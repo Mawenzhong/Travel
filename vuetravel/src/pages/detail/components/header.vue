@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     haederbtn () {
-      const top = document.documentElement.scrollTop
+      const top = window.scrollY
       if (top > 60) {
         let opacity = top / 140
         this.opacity = opacity > 1 ? 1 : opacity
