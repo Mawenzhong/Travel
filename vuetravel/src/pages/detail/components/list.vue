@@ -1,14 +1,14 @@
 <template>
     <div class="list">
-      <div class="item border-bottom" v-for="(item, index) of list" :key="index" @click="listclick">
-        <span class="iconfont item-title-add">&#xe6ce;</span>
-        {{item.title}}
+      <div class="item border-bottom" v-for="(item, index) of list" :key="index">
+        <div class="item-title" @click="listclick(index)"><span class="iconfont item-title-add">&#xe6ce;</span>
+        {{item.title}}</div>
         <div v-if="item.children">
-          <detaillist :list="item.children" v-show="condition"></detaillist>
+          <detaillist :list="item.children" v-show="nowindex===index"></detaillist>
         </div>
         </div>
       </div>
-</template>
+</template>index
 <script>
 export default {
   name: 'detaillist',
@@ -17,15 +17,15 @@ export default {
   },
   data () {
     return {
-      condition: false
+      nowindex: -1
     }
   },
   methods: {
-    listclick () {
-      if (this.condition === false) {
-        this.condition = true
+    listclick (index) {
+      if (this.nowindex < 0) {
+        this.nowindex = index
       } else {
-        this.condition = false
+        this.nowindex = -1
       }
     }
   }
